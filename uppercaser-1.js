@@ -6,6 +6,7 @@ var server = http.createServer(function (request, response) {
         response.end();
     }
 
+    response.writeHead(200, { 'content-type': 'text/plain' });
     request.on('data', function(chunk) {
         response.write(chunk.toString().toUpperCase());
     }).on('end', function() {
